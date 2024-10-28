@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація партнера</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Подключаем последнюю стабильную версию jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Подключаем более стабильную версию Inputmask -->
+    <script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.8/dist/inputmask.min.js"></script>
+    <style>
+        .material-symbols-outlined {
+            margin-right:10px;
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+    <link rel="stylesheet" href="{{ url_for('static', path='style.css') }}">
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-8">
+                <img src="/static/images/logoBZ.png" alt="Логотип"/>
+            </div>
+            <div class="col-xl-4 text-right">
+                {% block header %}
+                {% endblock %}
+                <select class="d-inline" id="languageSelect">
+                    <option value="uk">UA</option>
+                    <option value="en">EN</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% block content %}
+{% endblock %}
+
+<!-- Footer -->
+<div class="footer">
+    <p>© 2024 Аптека «Бажаємо здоров'я»</p>
+    <p>З усіх питань звертайтеся за тел: 0 800 500 512, 0 735 500 512, працюємо з 9:00 до 19:00</p>
+    <p>E-mail: torg@apteka.org.ua</p>
+</div>
+
+
+<script>
+    document.getElementById('acceptButton').addEventListener('click', function() {
+        // Найдем чекбокс и установим галочку
+        document.getElementById('accept_terms').checked = true;
+    });
+</script>
+
+<script>
+    $(document).ready(function(){
+        // Инициализация маски для поля ввода телефона
+        Inputmask("+38(099)-999-99-99", { "placeholder": " " }).mask("#phone");
+    });
+</script>
+
+<!-- Подключаем Popper.js и Bootstrap.js -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

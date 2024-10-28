@@ -1,0 +1,41 @@
+{% extends "index.html" %}
+
+{% block header %}
+<a href="/register" class="nav-link d-inline">Реєстрація</a>
+{% endblock %}
+
+{% block content %}
+<div class="container entrance-container">
+    <div class="row justify-content-md-center">
+        <div class="col-md-6">
+            <h3 class="text-center mb-4" style="color: #00549b;">Вхід</h3>
+            <div class="card p-4" style="border-radius: 15px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                <form method="post" action="/login" autocomplete="off">
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email" class="font-weight-bold" style="font-size: 16px; width: 100px; text-align: center;">E-mail:</label>
+                        <input type="email" class="form-control ml-2" id="email" name="email"
+                               placeholder="Введіть email" required autocomplete="off"
+                               style="border-radius: 10px; border: 2px solid #00549b;">
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group">
+
+                        <label for="password" class="font-weight-bold" style="font-size: 16px; width: 100px; text-align: center;">
+                               Пароль:</label>
+                        <input type="password" class="form-control ml-2" id="password" name="password"
+                               placeholder="Введіть пароль" required autocomplete="new-password"
+                               style="border-radius: 10px; border: 2px solid #00549b;">
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn btn-primary btn-block mt-4">
+                        Вхід
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

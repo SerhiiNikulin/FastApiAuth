@@ -1,0 +1,209 @@
+{% extends "index.html" %}
+
+{% block header%}
+<a href="/login" class="nav-link d-inline">Вхід</a>
+{% endblock %}
+
+{% block content%}
+<!-- Registration form -->
+<div class="container registration-container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h3 class="text-center" style="margin-block:10px;">Реєстрація партнера</h3>
+
+            <div class="card registration-card p-40">
+                <form method="POST" action="/register" autocomplete="off">
+                    <div class="form-group row justify-content-md-center">
+
+                        <div class="col-md-2 mt-2">
+                            <label for="full_name" class="font-weight-bold">ПІБ:<span class="required">*</span></label>
+                        </div>
+                        <div class="col-md-9 mt-2">
+                            <input type="text" class="form-control" id="full_name" name="full_name"
+                                   placeholder="Введіть повне ім'я" required autocomplete="off">
+                        </div>
+
+                        <div class="col-md-2 mt-2">
+                            <label for="phone" class="font-weight-bold">Телефон:<span class="required">*</span></label>
+                        </div>
+                        <div class="col-md-9 mt-2">
+                            <input type="tel" class="form-control" id="phone" name="phone"
+                                   placeholder="+38(0__) ___-__-__" required autocomplete="off">
+                        </div>
+
+                        <div class="col-md-2 mt-2">
+                            <label for="email" class="font-weight-bold">E-mail:<span class="required">*</span></label>
+                        </div>
+                        <div class="col-md-9 mt-2">
+                            <input type="email" class="form-control" id="email" name="email"
+                                   placeholder="Введіть email"
+                                   required autocomplete="off">
+                        </div>
+
+                        <div class="col-md-2 mt-2">
+                            <label for="company" class="font-weight-bold">Компанія:<span
+                                    class="required">*</span></label>
+                        </div>
+                        <div class="col-md-9 mt-2">
+                            <input type="text" class="form-control" id="company" name="company"
+                                   placeholder="Введіть назву компанії" required autocomplete="off">
+                        </div>
+
+                        <div class="col-md-2 mt-2">
+                            <label for="password" class="font-weight-bold">Пароль:<span
+                                    class="required">*</span></label>
+                        </div>
+                        <div class="col-md-9 mt-2">
+                            <input type="password" class="form-control" id="password" name="password"
+                                   placeholder="Введіть пароль" required autocomplete="new-password">
+                        </div>
+
+                        <div class="col-md-2 mt-2">
+                            <label for="confirm_password" class="font-weight-bold">Підтвердити пароль:<span
+                                    class="required">*</span></label>
+                        </div>
+                        <div class="col-md-9 mt-2">
+                            <input type="password" class="form-control" id="confirm_password"
+                                   name="confirm_password"
+                                   placeholder="Підтвердіть пароль" required autocomplete="new-password">
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-md-center" style="margin-left: 90px;">
+                        <div class="col-md-3">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="accept_terms" name="accept_terms"
+                                       required>
+                                <label class="form-check-label" for="accept_terms">
+                                    Я приймаю
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="form-check" style="margin-left: -15px;">
+                                <a href="#" class="stretched-link" data-toggle="modal"
+                                   data-target="#staticBackdrop">
+                                    правила apteka.net.ua
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Зареєструватися</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true" style="font-size: 12px;">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header" style="background-color: #f08b22;">
+                <span class="material-symbols-outlined">info</span>
+                <h5 class="modal-title" id="staticBackdropLabel" style="font-size: 15px;">Розділ реєстрації партнерів,
+                    призначений для реєстрації
+                    страхових компаній, регіональних менеджерів, КАМ менеджерів. Якщо Ви медичний представник, Вам
+                    необхідно звернутись за посиланням для реєстрації до Вашого регіонального менеджера.</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h5 class="text-center font-weight-bold">Правила сайту</h5>
+
+                <h5>1. Загальні положення</h5>
+
+                <p><strong>1.1.</strong> Адміністрація Сайту визначає правила поведінки на Сайті і залишає за собою
+                    право вимагати від відвідувачів виконання цих правил.</p>
+
+                <p><strong>1.2.</strong> Відмітка про погодження з умовами користування сайтом
+                    <a href="https://apteka.net.ua/">www.apteka.net.ua</a>. Сервіс
+                    по ознайомленню з рекомендаціями до роботи (далі "Сайт"), а також правила взаємодії між
+                    зареєстрованими користувачами сайту (далі "Користувачі") і Адміністрацією сайту (далі
+                    "Адміністрація").</p>
+
+                <h5>2. Отримання і використання персональної інформації</h5>
+
+                <p><strong>2.1.</strong> Адміністрація отримує персональну інформацію Користувача у мить реєстрації
+                    Користувача, під час знаходження Користувача на Сайті, в процесі використання сервісів Сайту.
+                    Зокрема така персональна інформація може включати: ім'я та прізвище Користувача, адресу електронної
+                    пошти, номер мобільного телефону, технічну інформацію з браузера Користувача тощо. Ім'я Користувача
+                    (Логін) та пароль не відносяться до персональної інформації Користувача та Адміністрація сайту не
+                    має доступу до цих даних.</p>
+
+                <p><strong>2.2.</strong> Усю отриману інформацію Адміністрація використовує з однією метою: зробити
+                    Портал максимально зручним та корисним для Користувача. Адміністрація нікому не передає персональну
+                    інформацію Користувача без його згоди, за виключенням випадків, коли цього вимагає українське або
+                    міжнародне законодавство.</p>
+
+                <h5>3. Умови використання Сайту</h5>
+
+                <p><strong>3.1.</strong> Приймаючи ці правила, Користувач підтверджує готовність виконувати умови
+                    використання сайту.</p>
+
+                <p>Користувач зобов'язується:</p>
+
+                <ul>
+                    <li>не видавати себе за іншого Користувача або представника організації та/або співтовариства без
+                        достатніх на це прав;
+                    </li>
+                    <li>використовувати Сайт виключно за допомогою засобів, що надає Адміністрація. Не використовувати
+                        програмні інструменти, які можуть створити надлишкове навантаження або спричинити збої в роботі
+                        Сайту;
+                    </li>
+                    <li>не видозмінювати будь-який елемент Сайту, не блокувати чи іншим чином не перешкоджати його
+                        відображенню.
+                    </li>
+                </ul>
+
+                <p><strong>3.2.</strong> Адміністрація залишає за собою право редагувати інформацію, розміщену
+                    Користувачем, з метою її впорядкування, а саме: форматувати, переміщувати в іншу категорію,
+                    змінювати назву, якщо Користувач не заборонив такі дії.</p>
+
+                <p><strong>3.3.</strong> У разі порушення будь-якого пункту цих правил, або, якщо будь-яка інформація,
+                    розміщена Користувачем, суперечить даним правилам, Адміністрація залишає за собою право
+                    редагувати/видаляти таку інформацію без пояснення причин, а також застосовувати до Користувача
+                    заходи дисциплінарного впливу, зокрема:</p>
+
+                <ul>
+                    <li>тимчасове обмеження доступу до Сайту;</li>
+                    <li>видалення реєстрації Користувача.</li>
+                </ul>
+
+                <h5>4. Обмежена гарантія</h5>
+
+                <p><strong>4.1.</strong> Адміністрація прагне забезпечити якісну і безперебійну роботу Сайту, гарантує
+                    однаково справедливе ставлення до всіх Користувачів, дотримання законодавства України та даних
+                    правил.</p>
+
+                <p><strong>4.2.</strong> Користувач розуміє і погоджується, що Сайт функціонує за принципом "як є" без
+                    будь-яких гарантій. При цьому Адміністрація може в будь-який час припинити підтримку, закрити
+                    будь-який сервіс на Сайті без завчасного попередження. Адміністрація не несе відповідальності за
+                    затримки, збої, невірну або невчасну доставку, видалення або втрату будь-якої персональної
+                    інформації, а також будь-які прямі чи непрямі збитки, які могли мати місце внаслідок використання
+                    або неможливості використання Сайту.</p>
+
+                <p><strong>4.3.</strong> Адміністрація Сайту залишає за собою право як змінювати дані правила, так і
+                    вносити/приймати нові. Подібні зміни вступають в дію з моменту їх розміщення на Сайті.</p>
+
+                <h5>5. Припинення реєстрації</h5>
+
+                <p>Адміністрація залишає за собою право видалити реєстрацію Користувача на свій розсуд без пояснення
+                    причин, у тому числі, внаслідок порушення цієї Угоди. Реєстрація Користувача, а також вся
+                    персональна інформація Користувача може бути видалена у випадку невідвідування Користувачем Сайту
+                    протягом одного календарного року.</p>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Відхилити</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal" id="acceptButton">Приймаю умови
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}
+
